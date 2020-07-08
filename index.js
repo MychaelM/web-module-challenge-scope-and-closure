@@ -79,8 +79,27 @@ finalScore(inning, 9) might return:
 */
 
 function finalScore(func, inningNum) {
-  /*Code Here*/
+  // create variables to track home team and away team scores
+  let homeScore = 0;
+  let awayScore = 0;
+  // create loop to get home team score
+  for (let i = 0; i < inningNum; i++) {
+    homeScore += func() 
+    // console.log(homeScore);
+  }
+  // create loop to get away team score
+  for (let i = 0; i < inningNum; i++) {
+    awayScore += func();
+  }
+  // create object to hold final scores
+  const finalScores = {
+    Home: homeScore,
+    Away: awayScore
+  }
+  return finalScores;
 }
+
+console.log(finalScore(inning, 9));
 
 /* Task 4: 
 Create a function called `scoreboard` that accepts the following parameters: 
