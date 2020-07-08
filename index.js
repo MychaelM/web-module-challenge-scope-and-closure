@@ -26,11 +26,21 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  *
  * 1. What is the difference between counter1 and counter2?
+ * 
+ * counter1 has the count variable inialized and assigned inside the function, where counter2 initializes and assigns the variable outside the function.
  *
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter1 because the higher-order function returns the lower-order function and the 
+ * lower-order function maintains its access to the variable inside counterMaker, even
+ * after counterMaker was called, due to closure.
+ * 
  *
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
- *
+ * counter1 would be preferable when you want to associate the data from count with a specific event,
+ * such as counting the number of times you score a point, but you can also create new instances of count for various purposes.
+ *  counter2 would be better when you need the track the data in count and count does not need 
+ *  to be utilized for several purposes.
  */
 
 // counter1 code
