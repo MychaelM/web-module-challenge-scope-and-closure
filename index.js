@@ -118,6 +118,32 @@ and returns the score at each point in the game, like so:
 9th inning: awayTeam - homeTeam
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+// Create getInningScore
+function getInningScore(func) {
+  // create variables to track home team and away team scores
+  let homeScore = 0;
+  let awayScore = 0;
+
+  return function addScores (){
+    homeScore += func();
+    awayScore += func();
+      const finalScores = {
+        Home: homeScore,
+        Away: awayScore,
+      };
+      return finalScores;
 }
+
+}
+
+
+function scoreboard(getInningScore, inning, inningNum) {
+  let gameScores = getInningScore(inning);
+  for (let i = 0; i < inningNum; i++) {
+    const inningScore = gameScores();
+    console.log(`Inning ${i + 1}: ${inningScore.Away} - ${inningScore.Home}`);
+    
+  }
+}
+
+console.log(scoreboard(getInningScore, inning, 9));
