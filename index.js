@@ -84,7 +84,7 @@ function finalScore(func, inningNum) {
   let awayScore = 0;
   // create loop to get home team score
   for (let i = 0; i < inningNum; i++) {
-    homeScore += func() 
+    homescore = homeScore + func() 
     // console.log(homeScore);
   }
   // create loop to get away team score
